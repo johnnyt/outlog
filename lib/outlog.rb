@@ -13,10 +13,6 @@ module Outlog
 
   module_function
 
-  def info message
-
-  end
-
   def logger
     @logger ||= create_logger
   end

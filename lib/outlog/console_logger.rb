@@ -24,7 +24,7 @@ module Outlog
     }
 
     def output hash
-      arr = [hash[:ts], ": ", hash[:message]]
+      arr = [hash[:message]]
       hash.each_pair { |k,v|
         next if %i[ ts level environment hostname pid message ].include? k
         arr << " #{k}="
@@ -36,6 +36,7 @@ module Outlog
       arr << "\e[#{CODEMAP[:normal]}m"
 
       puts arr.join
+      $stdout.flush
     end
   end
 end

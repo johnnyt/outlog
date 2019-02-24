@@ -50,9 +50,12 @@ module Outlog
     end
 
     def add severity, message, hash
-      hash = hash.dup
       severity = severity.nil? ? ::Logger::UNKNOWN : severity.to_i
       return true if severity < level
+
+      hash = hash.dup
+      loc = caller_locations(2, 1).first
+      hash[:filename] = "%s:%d" % [loc.path, loc.lineno]
 
       severity_name = level_name severity
 

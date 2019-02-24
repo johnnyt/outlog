@@ -9,6 +9,8 @@ GEM
     coderay (1.1.2)
     method_source (0.8.2)
     minitest (5.11.3)
+    minitest-focus (1.1.2)
+      minitest (>= 4, < 6)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -24,6 +26,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.17)
   minitest (~> 5.0)
+  minitest-focus
   outlog!
   pry-nav
   rake (~> 10.0)
